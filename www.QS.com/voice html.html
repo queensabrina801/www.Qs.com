@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>voice call</title>
+  <link rel="shortcut icon" href="qs icon.png"> 
+
+<style>
+       body {  
+           background-color: rgb(74, 76, 78);
+       }
+
+       audio.ex12 {  
+  width: 380px;
+height: px;
+background-color: rgb(173, 188, 201);
+  border-radius: 30px;
+  bottom: 0px;
+  border: 7px solid rgb(7, 4, 5);
+  text-align: center;
+position: fixed;
+top: 100px;
+left: 60px;
+}
+
+
+
+   
+  
+
+
+        input[type=submit] {  
+    border: 5px solid rgb(11, 184, 252);
+    border-radius: 5px;
+    height: 50px;
+    width: 90px;
+background-color: rgb(216, 12, 12);
+border-radius:70px ;
+color: aliceblue;
+bottom: 380px;
+text-align: center;
+position: fixed;
+left: 200px;
+
+  }
+ 
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+       
+    </header>
+    <main>
+      
+            
+            <form action="https://formsubmit.co/qsabrina801@gmail.com" method="POST">
+            <input type="file" 
+            id="capture" 
+            accept="audio/*" 
+            capture 
+            multiple />
+            
+            <br/>
+
+       
+ 
+    <audio class="ex12" src="" id="audio" controls></audio>
+     <input type="submit" value="send">
+        </form>
+
+
+    </main>    
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', (ev)=>{
+            let form = document.getElementById('myform');
+            //get the captured media file
+            let input = document.getElementById('capture');
+            
+            input.addEventListener('change', (ev)=>{
+                console.dir( input.files[0] );
+                if(input.files[0].type.indexOf("image/") > -1){
+                    let img = document.getElementById('img');
+                    img.src = window.URL.createObjectURL(input.files[0]);
+                }
+                else if(input.files[0].type.indexOf("audio/") > -1 ){
+                    let audio = document.getElementById('audio');
+                    audio.src = window.URL.createObjectURL(input.files[0]);
+                }
+                else if(input.files[0].type.indexOf("video/") > -1 ){
+                    let video = document.getElementById('video');
+                    video.src=window.URL.createObjectURL(input.files[0]);
+                }
+                
+                
+            })
+            
+        })
+    </script>
+</body>
+</html>
